@@ -1,4 +1,4 @@
-from langchain import PromptTemplate
+from langchain import LLMChain, PromptTemplate
 from langchain.llms import OpenAI
 
 
@@ -15,3 +15,16 @@ def genNameWithPrompt():
     )
     
     return prompt.format(product="colorful socks")
+
+def genNameWithChain():
+    llm = OpenAI(temperature=0.9)
+    
+    prompt = PromptTemplate(
+        input_variables=["product"],
+        template="what is a good name for a company that makes {product}?",
+    )
+    
+    chain = LLMChain(llm, prompt)
+    return chain.run("colorful socks")
+    
+    
