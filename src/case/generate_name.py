@@ -24,7 +24,7 @@ def genNameWithChain():
         template="what is a good name for a company that makes {product}?",
     )
     
-    chain = LLMChain(llm, prompt)
+    chain = LLMChain(llm=llm, prompt=prompt)
     return chain.run("colorful socks")
     
     
