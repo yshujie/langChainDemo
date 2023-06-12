@@ -1,7 +1,7 @@
 from langchain.agents import load_tools, initialize_agent, AgentType
 from langchain.llms import OpenAI
    
-def search():
+def searchWeather():
     # first load the language model
     llm = OpenAI(temperature=0)
     

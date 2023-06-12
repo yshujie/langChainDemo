@@ -1,4 +1,4 @@
-from src.case import searchWeather
+from src.case import weather_forecast
 
 if __name__ == "__main__":
-    searchWeather()
+    weather_forecast.searchWeather()

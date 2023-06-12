@@ -26,4 +26,3 @@ def genNameWithChain():
     
     chain = LLMChain(llm=llm, prompt=prompt)
     return chain.run("colorful socks")
- 
