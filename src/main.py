@@ -1,4 +1,4 @@
-from src.case import generateName
+from src.case import searchWeather
 
 if __name__ == "__main__":
-    generateName()
+    searchWeather()
