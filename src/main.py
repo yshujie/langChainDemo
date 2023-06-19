@@ -1,4 +1,4 @@
-from src.case import weather_forecast
+from src.case import chat
 
 if __name__ == "__main__":
-    weather_forecast.searchWeather()
+    chat.chat();
