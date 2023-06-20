@@ -10,4 +10,12 @@ def case1() -> str:
     prompt = PromptTemplate.from_template(template)
     return prompt.format(product="colorful socks")
     
+def case2() -> str:
+    # An example  prompt with no input variable
+    # 一个没有输入变量的示例提示
+    no_input_prompt = PromptTemplate(
+        input_variables=[],
+        template="Tell me a joke."
+    )
     
+    return no_input_prompt.format()
