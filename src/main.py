@@ -1,6 +1,5 @@
-from src.case import chat
-from src.case import weather_forecast
+from src.case import prompt_template
 
 if __name__ == "__main__":
-    chat.chatWithPrompt();
+    prompt_template.case1()
     
