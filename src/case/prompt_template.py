@@ -19,3 +19,11 @@ def case2() -> str:
     )
     
     return no_input_prompt.format()
+
+def case3() -> str:
+    # An example prompt with one input variable
+    one_input_prompt = PromptTemplate(
+        input_variables=["adjectives"],
+        template="Tell me a {adjectives} joke."
+    )
+    return one_input_prompt.format(adjectives="funny")
