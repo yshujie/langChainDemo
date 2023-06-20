@@ -35,3 +35,12 @@ def case4() -> str:
         template="Tell me a {adjective} joke about {content}."
     )
     return multiple_input_prompt.format(adjective="funny", content="a dog")
+
+def case5() -> str:
+    # use form_template to create a prompt
+    template = "Tell me a {adjective} joke about {content}."
+    
+    prompt_template = PromptTemplate.from_template(template)
+    prompt_template.input_variables
+    
+    return prompt_template.format(adjective="funny", content="a dog")
