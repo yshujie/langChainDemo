@@ -27,3 +27,11 @@ def case3() -> str:
         template="Tell me a {adjectives} joke."
     )
     return one_input_prompt.format(adjectives="funny")
+
+def case4() -> str:
+    # An example prompt with multiple input variables
+    multiple_input_prompt = PromptTemplate(
+        input_variables=["adjective", "content"],
+        template="Tell me a {adjective} joke about {content}."
+    )
+    return multiple_input_prompt.format(adjective="funny", content="a dog")
