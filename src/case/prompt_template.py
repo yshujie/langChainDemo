@@ -1,5 +1,15 @@
-from langchain import PromptTemplate
-
+from langchain.prompts import (
+    ChatPromptTemplate,
+    PromptTemplate,
+    SystemMessagePromptTemplate,
+    AIMessagePromptTemplate,
+    HumanMessagePromptTemplate
+)
+from langchain.schema import (
+    AIMessage,  
+    HumanMessage,
+    SystemMessage
+)
 
 def case1() -> str:
     template = """/ 
@@ -44,3 +54,15 @@ def case5() -> str:
     prompt_template.input_variables
     
     return prompt_template.format(adjective="funny", content="a dog")
+
+def case6() -> list:
+    # use MessagePrompt to create a prompt
+    
+    template = "You are a helpful assistant that translates {input_language} to {output_language}."
+    system_message_prompt = SystemMessagePromptTemplate.from_template(template)
+    
+    human_template="{text}"
+    human_message_prompt = HumanMessagePromptTemplate.from_template(human_template)
+    
+    chat_prompt = ChatPromptTemplate.from_messages([system_message_prompt, human_message_prompt])
+    return chat_prompt.format_prompt(input_language="English", output_language="Chinese", text="I love programming.").to_messages()
