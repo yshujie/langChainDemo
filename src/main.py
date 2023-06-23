@@ -1,7 +1,4 @@
-from src.case import prompt_template
+from src.case import prompt_connection_feature_store as prompt_template
 
 if __name__ == "__main__":
-    str = prompt_template.case6()
-
-    print(str)
-    
+    prompt_template.case3()    
