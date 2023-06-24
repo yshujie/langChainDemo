@@ -1,6 +1,9 @@
 from feast import FeatureStore
 from langchain.prompts import PromptTemplate, StringPromptTemplate
 
+from langchain.chat_models import ChatOpenAI
+from langchain.chains import LLMChain
+
 
 def case1():
     feast_repo_path = "/Users/ysj/Applications/feast/my_feature_repo/feature_repo/"
@@ -38,4 +41,10 @@ class FeastPromptTemplate(StringPromptTemplate):
 def case3(): 
     prompt_template = FeastPromptTemplate(input_variables=["driver_id"])
     print(prompt_template.format(driver_id=1001))
+    
+def case4():
+    prompt_template = FeastPromptTemplate(input_variables=["driver_id"])
+    chain = LLMChain(llm=ChatOpenAI(), prompt_template=prompt_template)
+    
+    chain.run(1001)
     
