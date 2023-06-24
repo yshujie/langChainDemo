@@ -1,6 +1,15 @@
-from src.case import prompt_connection_feature_store as prompt_template
+from src.case import function_explainer
+
+
 
 if __name__ == "__main__":
-    prompt_template.case1()
+    test_function_explainer()
     
-    prompt_template.case3()    
+    
+def test_function_explainer():
+    fn_explainer = function_explainer.FunctionExplainerPromptTemplate(input_variables=["function_name"])    
+    
+    # Generate a prompt for the function "get_source_code"
+    prompt = fn_explainer.format(function_name=function_explainer.get_source_code)  
+    
+    print(prompt)
