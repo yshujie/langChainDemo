@@ -104,5 +104,12 @@ def using_example_selector():
        print("\n")
        for k,v in example.items():
            print(f"{k}: {v}")
-
-
+           
+    prompt = FewShotPromptTemplate(
+        example_selector=example_selector,
+        example_prompt=example_prompt,
+        suffix="Question: {input}",
+        input_variables=["input"]
+    )
+    
+    print(prompt.format(input="Who was the father of Mary Ball Washington?"))
