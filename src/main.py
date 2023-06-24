@@ -1,10 +1,5 @@
 from src.case import function_explainer
 
-
-
-if __name__ == "__main__":
-    test_function_explainer()
-    
     
 def test_function_explainer():
     fn_explainer = function_explainer.FunctionExplainerPromptTemplate(input_variables=["function_name"])    
@@ -13,3 +8,6 @@ def test_function_explainer():
     prompt = fn_explainer.format(function_name=function_explainer.get_source_code)  
     
     print(prompt)
+    
+if __name__ == "__main__":
+    test_function_explainer()
