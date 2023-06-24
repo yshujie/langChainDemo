@@ -9,5 +9,10 @@ def test_function_explainer():
     
     print(prompt)
     
+    
+from src.case import few_shot_prompt_template    
+def test_few_shot_prompt_template():
+    few_shot_prompt_template.using_example_selector()
+    
 if __name__ == "__main__":
-    test_function_explainer()
+    test_few_shot_prompt_template()
