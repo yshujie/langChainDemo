@@ -14,5 +14,10 @@ from src.case import few_shot_prompt_template
 def test_few_shot_prompt_template():
     few_shot_prompt_template.using_example_selector()
     
+    
+from src.case import few_shot_examples_for_chat_models
+def test_few_shot_examples_for_chat_models():
+    few_shot_examples_for_chat_models.alternationHumanAndAIMessage()    
+    
 if __name__ == "__main__":
-    test_few_shot_prompt_template()
+    test_few_shot_examples_for_chat_models()

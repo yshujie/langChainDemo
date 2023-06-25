@@ -26,5 +26,5 @@ def alternationHumanAndAIMessage():
     chain = LLMChain(llm=chat, prompt=chat_prompt)
     
     # get a chat completion from the formatted message
-    chain.run("I love programming")
+    print(chain.run("I love programming"))
     
