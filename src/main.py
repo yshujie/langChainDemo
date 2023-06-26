@@ -1,4 +1,4 @@
-from src.demo import first_chat, history_searcher, document_summarizer, qa_bot
+from src.demo import first_chat, history_searcher, document_summarizer, qa_bot, youtube_bot
     
 def test_first_chat():
     first_chat.evaluateAI()    
@@ -12,6 +12,10 @@ def test_document_summarizer():
 
 def test_qa_bot():
     print(qa_bot.question("方寸的价值观是什么？简述一下"))
+ 
+def test_youtube_bot():
+    youtube_bot.chat()    
+    
     
 if __name__ == "__main__":
-    test_qa_bot()
+    test_youtube_bot()

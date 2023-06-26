@@ -37,13 +37,16 @@ def initTemporaryChroma(video_url) -> Chroma:
     return Chroma.from_documents(documents, embeddings)
     
 def chat():
-    initTemporaryChroma("https://www.youtube.com/watch?v=Dj60HHy-Kqk")
+    # 初始化向量数据库
+    vector_store = initTemporaryChroma("https://www.youtube.com/watch?v=Dj60HHy-Kqk")
+    # 初始化检索器
+    retriever = vector_store.as_retriever()
     
     system_template = """
     Use the following context to answer the user's question.
     If you don't know the answer, say you don't, don't try to make it up. And answer in Chinese.
     ----------
-    {context}
+    {question}
     ----------
     {chat_history}
     """
@@ -55,7 +58,7 @@ def chat():
     ]
     
     # 初始化 prompt 对象
-    prompt = ChatPromptTemplate(messages)
+    prompt = ChatPromptTemplate.from_messages(messages)
     
     # 初始化问答链
     qa = ConversationalRetrievalChain.from_llm(
@@ -69,10 +72,12 @@ def chat():
     while True:
         question = input('问题：')
         
-        # 开始发送问题 chat_history 为必须参数，用于存储对话历史
-        result = qa({"question": question, "chat_history": chat_history})
-        chat_history.append((question, result['answer']))
-        print(result['answer'])
-    
-    
+        # 如果 question 空，则跳过
+        if not question:
+            continue
         
+        # 开始发送问题 chat_history 为必须参数,用于存储对话历史
+        result = qa({'question': question, 'chat_history': chat_history})
+        chat_history.append((question, result['answer']))
+        
+        print(result['answer'])     
