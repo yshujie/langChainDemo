@@ -1,4 +1,4 @@
-from src.demo import first_chat, history_searcher, document_summarizer, qa_bot, youtube_bot
+from src.demo import first_chat, history_searcher, document_summarizer, qa_bot, youtube_bot, local_cuisine_recipe_searcher
     
 def test_first_chat():
     first_chat.evaluateAI()    
@@ -16,6 +16,9 @@ def test_qa_bot():
 def test_youtube_bot():
     youtube_bot.chat()    
     
+
+def test_local_cuisine_recipe_searcher():
+    local_cuisine_recipe_searcher.start("北京")
     
 if __name__ == "__main__":
-    test_youtube_bot()
+    test_local_cuisine_recipe_searcher()

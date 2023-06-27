@@ -3,7 +3,7 @@ from langchain.chains import LLMChain
 from langchain.prompts import PromptTemplate
 from langchain.chains import SimpleSequentialChain
 
-def start(): 
+def start(local_name): 
     # location 链
     llm = OpenAI(temperature=1)
     template = """Your job is to come up with a classic dish from the area than the users suggests.
@@ -29,7 +29,7 @@ def start():
     
     # 通过 SimpleSequentialChain 将两个链串联起来，第一个答案会被替换第二个钟的 user_meal，然后再进行询问
     overall_chain = SimpleSequentialChain(chains=[location_chain, meal_chain], verbose=True)
-    review = overall_chain.run("Rome")
+    review = overall_chain.run(local_name)
     
     
     
