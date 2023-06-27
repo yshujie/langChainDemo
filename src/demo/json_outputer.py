@@ -2,9 +2,9 @@ from langchain.output_parsers import StructuredOutputParser, ResponseSchema
 from langchain.prompts import PromptTemplate
 from langchain.llms import OpenAI
 
-def output() -> Any:
+def output():
     # 初始化 llm
-    llm = OpenAI(model_name="text_davinci-003")
+    llm = OpenAI(model_name="text-davinci-003")
     
     # 定义输出 schema
     response_schema = [
@@ -13,7 +13,7 @@ def output() -> Any:
     ]
     
     # 初始化解析器
-    output_parser = StructuredOutputParser(response_schema=response_schema)
+    output_parser = StructuredOutputParser.from_response_schemas(response_schema)
     
     # 生成的格式提示符
     format_instructions = output_parser.get_format_instructions()

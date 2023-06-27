@@ -1,4 +1,4 @@
-from src.demo import first_chat, history_searcher, document_summarizer, qa_bot, youtube_bot, local_cuisine_recipe_searcher
+from src.demo import first_chat, history_searcher, document_summarizer, qa_bot, youtube_bot, local_cuisine_recipe_searcher, json_outputer
     
 def test_first_chat():
     first_chat.evaluateAI()    
@@ -19,6 +19,9 @@ def test_youtube_bot():
 
 def test_local_cuisine_recipe_searcher():
     local_cuisine_recipe_searcher.start("北京")
+
+def test_json_outputer():
+    print(json_outputer.output())
     
 if __name__ == "__main__":
-    test_local_cuisine_recipe_searcher()
+    test_json_outputer()
