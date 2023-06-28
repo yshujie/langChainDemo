@@ -18,7 +18,7 @@ def generate_serially():
         print(resp)
     
 async def async_generate(chain):
-    resp = await chain.run("cars")
+    resp = await asyncio.to_thread(chain.run, product_name="cars")
     print(resp)
     
 async def generate_concurrently():
