@@ -48,8 +48,10 @@ def giveNameForProduct2() -> str:
     
     # 设置 Prompt
     human_message_prompt = HumanMessagePromptTemplate(
-        input_variables=['company_name', 'product_name'],
-        template="What is a good name for a {company_name} {product_name}?"
+        prompt= PromptTemplate(
+            template="What is a good name for a {company_name} {product_name}?",
+            input_variables=['company_name', 'product_name']
+        )
     )
     chat_prompt_template = ChatPromptTemplate.from_messages([human_message_prompt])
     
