@@ -61,7 +61,3 @@ def giveNameForProduct2() -> str:
         "company_name": "Tesla",
         "product_name": "car"
     })
-    
-    
-    
-        
