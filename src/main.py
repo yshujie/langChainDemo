@@ -1,17 +1,7 @@
-from src.case.chains import (
-    loading_from_langChainHub,
-    router,
-    film_critic
-)
+import src.demo as demo
 
-def testLoadFromLangChainHub():
-    loading_from_langChainHub.calc()    
-
-def testRouter():
-    router.route()
-
-def testFilmCritic():
-    film_critic.review()
+def test_fetch_web():
+    demo.fetch_web.fetch_web()
     
 if __name__ == "__main__":
-    testFilmCritic()
+    test_fetch_web()
