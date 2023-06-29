@@ -37,7 +37,7 @@ chain = LLMRequestsChain(
  
 def fetch_web(url):
      inputs = {
-         "url": "https://vip.stock.finance.sina.com.cn/corp/go.php/vCI_CorpInfo/stockid/600519.phtml"
+         "url": url
      }
      
      response = chain(inputs)
