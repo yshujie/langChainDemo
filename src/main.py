@@ -1,6 +1,7 @@
 from src.case.chains import (
     loading_from_langChainHub,
-    router
+    router,
+    film_critic
 )
 
 def testLoadFromLangChainHub():
@@ -8,6 +9,9 @@ def testLoadFromLangChainHub():
 
 def testRouter():
     router.route()
+
+def testFilmCritic():
+    film_critic.review()
     
 if __name__ == "__main__":
-    testRouter()
+    testFilmCritic()
