@@ -43,6 +43,7 @@ def route():
     # 创建 llm
     llm = OpenAI()
     
+    # 目的地链
     destination_chains = {}
     for p_info in prompt_infos:
         # 创建 prompt
@@ -52,7 +53,7 @@ def route():
         )
         
         # 创建 llm chain
-        chain - LLMChain(
+        chain = LLMChain(
             llm=llm,
             prompt=prompt,
         )
